@@ -1,0 +1,30 @@
+@import '../base/_colors'
+@import '../base/_variables'
+@import '../layout/_mixin'
+
+%title
+
+    h3
+        margin: 0 auto;
+        text-transform: lowercase
+        font-size: 35px
+        position: relative
+
+        span
+            font-size: 110px
+            color: $brand-color
+
+        &::after
+            position: absolute
+            content: ""
+            left: 50px
+            @include transform(rotateX(180deg))
+            font-style: italic
+            top: 92px
+            color: #f1f1f1
+            font-size: 36px
+            z-index: -100
+
+%service-pos
+    position: absolute
+    border: 1px dashed $brand-color
