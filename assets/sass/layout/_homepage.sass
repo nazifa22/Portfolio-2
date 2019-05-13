@@ -27,12 +27,10 @@ body
 
 ::-webkit-scrollbar-track
     background-color: #fff
-    // border-radius: 10px
 
 ::-webkit-scrollbar
     width: 10px
     background-color: #fff
-    // border-radius: 10px
 
 ::-webkit-scrollbar-thumb:hover
     border-radius: 10px
@@ -40,7 +38,7 @@ body
     background: -moz-linear-gradient(top, #f8ffe8 0%, #daffb2 19%, #1dbf73 85%)
     background: -webkit-linear-gradient(top, #f8ffe8 0%,#daffb2 19%,#1dbf73 85%)
     background: linear-gradient(to bottom, #f8ffe8 0%,#daffb2 19%,#1dbf73 85%)
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8ffe8', endColorstr='#1dbf73',GradientType=0 )
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8ffe8', endColorstr='#1dbf73',GradientType=0)
 
 ::-webkit-scrollbar-thumb
     // border-radius: 10px
@@ -48,7 +46,7 @@ body
     background: -moz-linear-gradient(top, #1dbf73 0%, #daffb2 19%, #f8ffe8 85%)
     background: -webkit-linear-gradient(top, #1dbf73 0%,#daffb2 19%,#f8ffe8 85%)
     background: linear-gradient(to bottom, #1dbf73 0%,#daffb2 19%,#f8ffe8 85%)
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1dbf73', endColorstr='#f8ffe8',GradientType=0 )
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1dbf73', endColorstr='#f8ffe8',GradientType=0)
 
 html 
     overflow: scroll
@@ -221,6 +219,11 @@ section
                     .service-section
                         text-align: center
                         margin: 30px 0 0
+                        @include transition(all 1.5s ease)
+
+                        &:hover
+                            @include transition(all 1.5s ease)
+                            @include transform(scale(1.2,1.2))
 
                         h3
                             font-family: $title-font
@@ -269,6 +272,12 @@ section
                         text-align: center
                         background-color: #1dbf73
                         border-radius: 100%
+                        cursor: pointer
+                        @include transition(all 1s ease)
+
+                        &:hover
+                            @include transition(all 1s ease)
+                            @include transform(scale(1.5,1.5))
 
                         @include respond-to(smallDevices)
                             margin-bottom: 20px !important
@@ -282,6 +291,89 @@ section
                             p
                                 text-transform: uppercase
                                 color: $white
+
+            #SE
+                .title
+                    @extend %title
+
+                    h3
+                        &::after
+                            content: "y skills & education"
+                            left: 82px
+                            top: 94px
+                
+                #skills
+                    width: 95%
+
+                    @include respond-to(smallDevices)
+                        width: 100% !important
+
+                    .row
+                        margin-top: 10px
+
+                    .progress-bar
+                            display: -ms-flexbox
+                            display: flex
+                            -ms-flex-direction: column
+                            flex-direction: column
+                            -ms-flex-pack: center
+                            justify-content: center
+                            color: #fff
+                            text-align: center
+                            white-space: nowrap
+                            background-color: $dark
+                            transition: width .6s ease
+
+                    .text_
+                        color: $brand-color
+
+                #education
+                    @include respond-to(smallDevices)
+                        margin-top: 20px
+
+                    .card
+                        border: 0px !important
+
+                        .card-header
+
+                            button
+                                color: $brand-color
+                                font-size: 24px
+                                @include transition(all 1s ease)
+                                padding: 10px 0
+
+                                &:hover
+                                    text-decoration: none !important
+                                    color: $black
+                                    @include transition(all 1s ease)
+
+                                &:focus
+                                    text-decoration: none !important
+
+                                svg
+                                    color: $brand-color
+                                    position: absolute
+                                    right: 20px
+                                    top: 25px
+                        
+                        .card-body
+                            margin: 0px 0px 0px 50px !important
+
+                            ul
+
+                                li
+                                    font-size: 25px
+
+                                    span
+                                        font-size: 24px
+
+                                    ul
+                                        margin-left: 35px
+
+                                        li
+                                            h4, p
+                                                font-size: 20px
+
 
 .btn-success
     background: $brand-color !important
@@ -311,10 +403,13 @@ section
         text-decoration: none
 
 .prev, .next
-    top: 22%
+    top: 100px
 
     @include respond-to(normal-devices)
-        top: 13% !important
+        top: 15% !important
+
+.dot
+    background: $brand-color
 
 // Particle
 
@@ -331,3 +426,35 @@ section
         z-index: 1
 
 // Particle
+
+// Scroll To Top
+
+#return-to-top 
+    position: fixed
+    bottom: 20px
+    right: 20px
+    background: $brand-color
+    width: 50px
+    height: 50px
+    display: block
+    text-decoration: none
+    @include border-radius(35px)
+    @include transition(all 0.3s linear)
+
+    &:hover 
+        background: rgba(0, 0, 0, 0.9)
+
+    &:hover svg 
+        color: $white
+        top: 5px
+
+    svg 
+        color: $white
+        margin: 0
+        position: relative
+        left: 19px
+        top: 13px
+        font-size: 19px
+        @include transition(all 0.3s linear)
+
+// Scroll To Top

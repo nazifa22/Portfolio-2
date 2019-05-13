@@ -9,6 +9,7 @@
         text-transform: lowercase
         font-size: 35px
         position: relative
+        // @include transform(skewX(10deg))
 
         span
             font-size: 110px
@@ -20,10 +21,12 @@
             left: 50px
             @include transform(rotateX(180deg))
             font-style: italic
-            top: 92px
-            color: #f1f1f1
+            top: 93px
+            color: #e4e4e4
             font-size: 36px
             z-index: -100
+            letter-spacing: -1px
+            word-spacing: 3px
 
 %service-pos
     position: absolute

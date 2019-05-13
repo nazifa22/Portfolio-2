@@ -17,6 +17,67 @@ $(document).ready(function(){
       strings: ["First ^1000 sentence.", "Second sentence."]
     });*/
 
+    $('.progress-bar').css({
+      // 'background': '#1dbf73'
+    })
+
+    $(".html").animate({
+      'width': '98%'
+    });
+  
+    $(".css").animate({
+      'width': '98%'
+    });
+  
+    $(".bootstrap").animate({
+      'width': '95%'
+    });
+  
+    $(".jquery").animate({
+      'width': '90%'
+    });
+  
+    $(".js").animate({
+      'width': '60%'
+    });
+  
+    $(".sass").animate({
+      'width': '90%'
+    });
+  
+    $(".php").animate({
+      'width': '50%'
+    });
+  
+    $(".db").animate({
+      'width': '60%'
+    });
+  
+    $(".c").animate({
+      'width': '50%'
+    });
+
+    $(".logo").draggable(function(){
+      $("#return-to-top").css({
+        'position': 'absolute'
+      });
+    });
+  
+    $(".scroll-to-top").draggable();
+
+});
+
+document.getElementById("return-to-top").style.display = "none";
+
+$(window).scroll(function(){
+  if($(this).scrollTop() >= 10)
+    {
+      document.getElementById("return-to-top").style.display = "";
+    }
+    else 
+    {
+      document.getElementById("return-to-top").style.display = "none";
+    }
 });
 
 //Slider
