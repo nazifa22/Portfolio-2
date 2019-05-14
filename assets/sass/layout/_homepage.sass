@@ -62,7 +62,7 @@ header
 
     .wrapper
         color: $white
-        font-size: 18px
+        font-size: 16px
         
         svg 
             font-size: 16px
@@ -72,26 +72,26 @@ header
             text-align: center !important
 
         a
-            font-size: 18px
+            font-size: 16px
             padding: 0 2px
             color: $white
 
 nav 
-    top: 47px !important
+    top: 44px !important
 
     @include respond-to(handhelds)
-        top: 74px !important
+        top: 68px !important
 
     .logo
         color: $dark !important
-        font-size: 26px
+        font-size: 24px
 
     .menu 
         ul
             li 
         
                 a
-                    font-size: 20px
+                    font-size: 18px
                     color: $dark !important
                     @include transition(all 0.3s ease)
                     border-bottom: 0px solid $brand-color 
@@ -126,6 +126,9 @@ aside
     
     .info
         padding: 20px 0 0
+
+        h2
+            font-family: $title-font
 
         .typed, .typed-cursor
             color: $brand-color
@@ -162,7 +165,7 @@ section
 
             #about
                 p
-                    font-size: 22px
+                    font-size: 20px
                 
                 .title
                     @extend %title
@@ -212,7 +215,8 @@ section
                     h3
                         &::after
                             content: "y services"
-                            left: 82px
+                            left: 88px
+                            top: 73px
                 
                 .services
 
@@ -299,12 +303,11 @@ section
                     h3
                         &::after
                             content: "y skills & education"
-                            left: 82px
-                            top: 94px
+                            left: 86px
+                            top: 74px
                 
                 #skills
                     width: 95%
-                    color: $brand-color
 
                     @include respond-to(smallDevices)
                         width: 100% !important
@@ -313,20 +316,17 @@ section
                         margin-top: 10px
 
                     .progress-bar
-                            display: -ms-flexbox
-                            display: flex
-                            -ms-flex-direction: column
-                            flex-direction: column
-                            -ms-flex-pack: center
-                            justify-content: center
-                            color: #fff
-                            text-align: center
-                            white-space: nowrap
-                            background-color: $dark
-                            transition: width .6s ease
-
-                    .text_
-                        color: $brand-color
+                        display: -ms-flexbox
+                        display: flex
+                        -ms-flex-direction: column
+                        flex-direction: column
+                        -ms-flex-pack: center
+                        justify-content: center
+                        color: #fff
+                        text-align: center
+                        white-space: nowrap
+                        background-color: $dark
+                        transition: width .6s ease
 
                 #education
                     @include respond-to(smallDevices)
@@ -336,7 +336,7 @@ section
                         border: 0px !important
 
                         .card-header
-                            background: $brand-color-opacity !important
+                            background: #f8f9fa !important
                             border-color: $brand-color !important
 
                             button
@@ -407,9 +407,13 @@ section
 
 .prev, .next
     top: 100px
+    padding: 4px 10px 0 9px
+    width: 31px
 
     @include respond-to(normal-devices)
-        top: 15% !important
+        top: 78px !important
+        padding: 6px 0 0 0 !important
+        width: 34px !important
 
 .dot
     background: $brand-color
