@@ -217,6 +217,10 @@ section
                             content: "y services"
                             left: 88px
                             top: 73px
+
+                            @include respond-to(handhelds)
+                                    left: 88px
+                                    top: 79px
                 
                 .services
 
@@ -305,6 +309,10 @@ section
                             content: "y skills & education"
                             left: 86px
                             top: 74px
+
+                            @include respond-to(handhelds)
+                                left: 87px
+                                top: 80px
                 
                 #skills
                     width: 95%
@@ -338,6 +346,7 @@ section
                         .card-header
                             background: #f8f9fa !important
                             border-color: $brand-color !important
+                            padding: 0 20px !important
 
                             button
                                 color: $brand-color
@@ -357,7 +366,8 @@ section
                                     color: $brand-color
                                     position: absolute
                                     right: 20px
-                                    top: 25px
+                                    top: 20px
+                                    font-size: 18px
                         
                         .card-body
                             margin: 0px 0px 0px 50px !important
@@ -411,7 +421,7 @@ section
     width: 31px
 
     @include respond-to(normal-devices)
-        top: 78px !important
+        top: 50px !important
         padding: 6px 0 0 0 !important
         width: 34px !important
 

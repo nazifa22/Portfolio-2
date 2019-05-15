@@ -10,7 +10,9 @@
         text-transform: lowercase
         font-size: 35px
         position: relative
-        // @include transform(skewX(10deg))
+
+        @include respond-to(handhelds)
+            font-size: 28px
 
         span
             font-size: 110px
@@ -19,15 +21,17 @@
         &::after
             position: absolute
             content: ""
-            left: 60px
-            // @include transform(rotateX(180deg))
-            // font-style: italic
-            top: 75px
+            left: 62px
+            top: 73px
             color: #dedede
             font-size: 36px
             z-index: -100
             letter-spacing: -1px
             word-spacing: 3px
+
+            @include respond-to(handhelds)
+                font-size: 29px
+                top: 80px
 
 %service-pos
     position: absolute
