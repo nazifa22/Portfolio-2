@@ -377,20 +377,33 @@ section
                                             h4, p
                                                 font-size: 20px
 
+            #contact
+                .title
+                    @extend %title
+
+                    h3
+                        &::after
+                            content: "ontact me"
+                            left: 86px
+                            top: 74px
+
+                label
+                    display: none
+                            
 
 .btn-success
     background: $brand-color !important
     border-color: $brand-color !important
-    border: 2px solid #1DBF73!important;
-    border-radius: 22px;
+    border: 2px solid #1DBF73!important
+    border-radius: 22px
 
     &:hover
         background: $hover-color !important
 
 .btn-outline-success
     border-color: $brand-color !important
-    border: 2px solid #1DBF73!important;
-    border-radius: 22px;
+    border: 2px solid #1DBF73!important
+    border-radius: 22px
 
     &:hover
         background: $hover-color !important
