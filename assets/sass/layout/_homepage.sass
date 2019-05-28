@@ -33,20 +33,19 @@ body
     background-color: #fff
 
 ::-webkit-scrollbar-thumb:hover
-    border-radius: 10px
-    background: #f8ffe8
-    background: -moz-linear-gradient(top, #f8ffe8 0%, #daffb2 19%, #1dbf73 85%)
-    background: -webkit-linear-gradient(top, #f8ffe8 0%,#daffb2 19%,#1dbf73 85%)
-    background: linear-gradient(to bottom, #f8ffe8 0%,#daffb2 19%,#1dbf73 85%)
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8ffe8', endColorstr='#1dbf73',GradientType=0)
+    background: #280a4a
+    background: -moz-linear-gradient(top,  #280a4a 0%, #7a59a5 14%, #7a59a5 14%, #463b70 72%, #280a4a 93%)
+    background: -webkit-linear-gradient(top,  #280a4a 0%,#7a59a5 14%,#7a59a5 14%,#463b70 72%,#280a4a 93%)
+    background: linear-gradient(to bottom,  #280a4a 0%,#7a59a5 14%,#7a59a5 14%,#463b70 72%,#280a4a 93%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#280a4a', endColorstr='#280a4a',GradientType=0 )
 
 ::-webkit-scrollbar-thumb
     // border-radius: 10px
-    background: #f8ffe8
-    background: -moz-linear-gradient(top, #1dbf73 0%, #daffb2 19%, #f8ffe8 85%)
-    background: -webkit-linear-gradient(top, #1dbf73 0%,#daffb2 19%,#f8ffe8 85%)
-    background: linear-gradient(to bottom, #1dbf73 0%,#daffb2 19%,#f8ffe8 85%)
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1dbf73', endColorstr='#f8ffe8',GradientType=0)
+    background: #280a4a
+    background: -moz-linear-gradient(top, #280a4a 0%, #463b70 26%, #463b70 26%, #280a4a 85%, #7a59a5 100%)
+    background: -webkit-linear-gradient(top, #280a4a 0%,#463b70 26%,#463b70 26%,#280a4a 85%,#7a59a5 100%)
+    background: linear-gradient(to bottom, #280a4a 0%,#463b70 26%,#463b70 26%,#280a4a 85%,#7a59a5 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#280a4a', endColorstr='#7a59a5',GradientType=0 )
 
 html 
     overflow: scroll
@@ -92,7 +91,7 @@ nav
         
                 a
                     font-size: 18px
-                    color: $dark !important
+                    color: $brand-color !important
                     @include transition(all 0.3s ease)
                     border-bottom: 0px solid $brand-color 
                     height: 46px
@@ -122,13 +121,21 @@ aside
     img
         width: 200px
         border-radius: 75%
-        border: 10px solid $brand-color-opacity
+        // border: 10px solid $brand-color-opacity
+
+        &::before
+            content: ""
+            position: absolute
+            width: 200px
+            height: 200px
+            border: 1px solid $brand-color
     
     .info
         padding: 20px 0 0
 
         h2
-            font-family: $title-font
+            // font-family: $title-font
+            font-size: 26px
 
         .typed, .typed-cursor
             color: $brand-color
@@ -234,8 +241,8 @@ section
                             @include transform(scale(1.2,1.2))
 
                         h3
-                            font-family: $title-font
                             margin: 30px 0 10px
+                            font-size: 24px
 
                         div
                             width: 100px
@@ -278,14 +285,23 @@ section
                         display: inline-block
                         padding: 10px 0
                         text-align: center
-                        background-color: #1dbf73
+                        background-color: $brand-color
                         border-radius: 100%
                         cursor: pointer
                         @include transition(all 1s ease)
 
                         &:hover
                             @include transition(all 1s ease)
-                            @include transform(scale(1.5,1.5))
+                            @include transform(scale(1.2,1.2))
+                            background: #e6e6e6 
+
+                            svg
+                                color: $brand-color !important
+                                @include transition(all 1s ease)
+                            
+                            p
+                                color: $brand-color !important
+                                @include transition(all 1s ease)
 
                         @include respond-to(smallDevices)
                             margin-bottom: 20px !important
@@ -295,10 +311,12 @@ section
                                 font-size: 22px
                                 margin: 15px 0 0
                                 color: $white
+                                @include transition(all 1s ease)
                             
                             p
                                 text-transform: uppercase
                                 color: $white
+                                @include transition(all 1s ease)
 
             #SE
                 .title
@@ -315,7 +333,7 @@ section
                                 top: 80px
                 
                 #skills
-                    width: 95%
+                    // width: 95%
 
                     @include respond-to(smallDevices)
                         width: 100% !important
@@ -323,18 +341,31 @@ section
                     .row
                         margin-top: 10px
 
-                    .progress-bar
-                        display: -ms-flexbox
-                        display: flex
-                        -ms-flex-direction: column
-                        flex-direction: column
-                        -ms-flex-pack: center
-                        justify-content: center
-                        color: #fff
-                        text-align: center
-                        white-space: nowrap
-                        background-color: $dark
-                        transition: width .6s ease
+                    .progress
+                        background: transparent !important
+                        height: 6px !important
+
+                        &::after 
+                            position: absolute
+                            content: ""
+                            background: #777
+                            width: 95%
+                            height: 2px
+                            margin-top: 2px
+                            z-index: -1
+
+                        .progress-bar
+                            display: -ms-flexbox
+                            display: flex
+                            -ms-flex-direction: column
+                            flex-direction: column
+                            -ms-flex-pack: center
+                            justify-content: center
+                            color: #fff
+                            text-align: center
+                            white-space: nowrap
+                            background-color: #333
+                            transition: width .6s ease
 
                 #education
                     @include respond-to(smallDevices)
@@ -349,7 +380,7 @@ section
                             padding: 0 20px !important
 
                             button
-                                color: $brand-color
+                                color: $black
                                 font-size: 24px
                                 @include transition(all 1s ease)
                                 padding: 10px 0
@@ -363,7 +394,7 @@ section
                                     text-decoration: none !important
 
                                 svg
-                                    color: $brand-color
+                                    color: #333
                                     position: absolute
                                     right: 20px
                                     top: 20px
@@ -402,14 +433,14 @@ section
                                 left: 46px !important
                 
                 input, textarea
-                        border: none !important
-                        border-bottom: 1px solid #f1f1f1 !important
-                        border-radius: 0px !important
-                        margin-bottom: 20px !important
+                    border: none !important
+                    border-bottom: 1px solid #f1f1f1 !important
+                    border-radius: 0px !important
+                    margin-bottom: 20px !important
 
-                        &:focus
-                            border-bottom: 1px solid $brand-color !important
-                            box-shadow: none !important
+                    &:focus
+                        border-bottom: 1px solid $brand-color !important
+                        box-shadow: none !important
                             
                 .personal-info
                     margin-top: 30px
@@ -435,25 +466,39 @@ section
 .btn-success
     background: $brand-color !important
     border-color: $brand-color !important
-    border: 2px solid #1DBF73!important
-    // border-radius: 22px
+    border: 2px solid $brand-color !important
+    border-radius: 22px
 
     &:hover
         background: $hover-color !important
+
+    &:active
+        box-shadow: 0 0 0 0.2rem rgba(40, 10, 74, 0.44) !important
+
+    &:focus
+        box-shadow: 0 0 0 0.2rem rgba(40, 10, 74, 0.44) !important
 
 .btn-outline-success
     border-color: $brand-color !important
-    border: 2px solid #1DBF73!important
-    // border-radius: 22px
+    border: 2px solid $brand-color !important
+    border-radius: 22px
+    color: $brand-color !important
 
     &:hover
-        background: $hover-color !important
+        background: $brand-color !important
+        color: $white !important
 
         a
             color: $white
 
-    &:hover
-        color: $white !important
+    &:active
+        box-shadow: 0 0 0 0.2rem rgba(40, 10, 74, 0.44) !important
+
+    &:focus
+        box-shadow: 0 0 0 0.2rem rgba(40, 10, 74, 0.44) !important
+
+    // &:hover
+    //     color: $white !important
 
     a
         color: $brand-color
@@ -463,14 +508,32 @@ section
     top: 100px
     padding: 4px 10px 0 9px
     width: 31px
+    background: #e6e6e6 !important
+    color: $brand-color !important
+
+    &:hover
+        background: $brand-color !important
+        color: #e6e6e6 !important
 
     @include respond-to(normal-devices)
         top: 50px !important
         padding: 6px 0 0 0 !important
         width: 34px !important
 
-.dot
+.dot 
+    border: 2px solid $brand-color
     background: $brand-color
+    width: 10px
+    height: 10px
+    border-radius: 10px
+
+    &:hover
+        background: $brand-color
+        background: transparent
+        border: 2px solid $brand-color
+
+    &:focus
+        background: $brand-color
 
 // Particle
 
@@ -494,7 +557,7 @@ section
     position: fixed
     bottom: 20px
     right: 20px
-    background: $brand-color
+    background: #e6e6e6
     width: 50px
     height: 50px
     display: block
@@ -503,14 +566,14 @@ section
     @include transition(all 0.3s linear)
 
     &:hover 
-        background: rgba(0, 0, 0, 0.9)
+        background: $brand-color
 
     &:hover svg 
         color: $white
         top: 5px
 
     svg 
-        color: $white
+        color: $brand-color
         margin: 0
         position: relative
         left: 19px

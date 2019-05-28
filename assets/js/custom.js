@@ -23,39 +23,39 @@ $(document).ready(function(){
 
     $(".html").animate({
       'width': '98%'
-    });
+    }, 2000);
   
     $(".css").animate({
       'width': '98%'
-    });
+    }, 2000);
   
     $(".bootstrap").animate({
       'width': '95%'
-    });
+    }, 2000);
   
     $(".jquery").animate({
       'width': '90%'
-    });
+    }, 2000);
   
     $(".js").animate({
       'width': '60%'
-    });
+    }, 2000);
   
     $(".sass").animate({
       'width': '90%'
-    });
+    }, 2000);
   
     $(".php").animate({
       'width': '50%'
-    });
+    }, 2000);
   
     $(".db").animate({
       'width': '60%'
-    });
+    }, 2000);
   
     $(".c").animate({
       'width': '50%'
-    });
+    }, 2000);
 
     $(".logo").draggable(function(){
       $("#return-to-top").css({
