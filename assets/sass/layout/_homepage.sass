@@ -123,12 +123,19 @@ aside
         border-radius: 75%
         // border: 10px solid $brand-color-opacity
 
-        &::before
-            content: ""
-            position: absolute
-            width: 200px
-            height: 200px
-            border: 1px solid $brand-color
+    p
+
+        @include respond-to(wide)
+            // &::after
+            // content: ""
+            // position: absolute
+            // box-shadow: 4px 0px 7px 2px #b5b5b5
+            // width: 205px
+            // height: 200px
+            // top: 0px
+            // left: 100px
+            // z-index: -1
+            // border-radius: 59%
     
     .info
         padding: 20px 0 0
@@ -226,8 +233,8 @@ section
                             top: 73px
 
                             @include respond-to(handhelds)
-                                    left: 88px
-                                    top: 79px
+                                left: 88px
+                                top: 79px
                 
                 .services
 
@@ -241,7 +248,7 @@ section
                             @include transform(scale(1.2,1.2))
 
                         h3
-                            margin: 30px 0 10px
+                            margin: 0px 0 10px
                             font-size: 24px
 
                         div
@@ -249,10 +256,13 @@ section
                             padding: 25px 0
                             border-radius: 100%
                             margin: 0 auto
-                            border: 3px dashed $brand-color
+                            // border: 3px dashed $brand-color
                             svg
                                 font-size: 40px
                                 color: $brand-color
+                            
+                            @include respond-to(handhelds)
+                                padding: 0px !important
 
                         p
                             font-size: 16px
@@ -268,17 +278,8 @@ section
                         text-align: left
                         margin-bottom: 20px
 
-                        &::before
-                            content: ""
-                            position: absolute
-                            border: 2px dashed #fbfafa
-                            width: 350px
-                            border-radius: 3px
-                            top: 15px
-                            left: 182px
-
-                            @include respond-to(handhelds)
-                                width: 200px
+                        @include respond-to(smallDevices)
+                            text-align: center !important
 
                     .wrapper
                         width: 100px
@@ -293,7 +294,7 @@ section
                         &:hover
                             @include transition(all 1s ease)
                             @include transform(scale(1.2,1.2))
-                            background: #e6e6e6 
+                            background: #fff 
 
                             svg
                                 color: $brand-color !important
@@ -349,7 +350,7 @@ section
                             position: absolute
                             content: ""
                             background: #777
-                            width: 95%
+                            width: 90%
                             height: 2px
                             margin-top: 2px
                             z-index: -1
@@ -368,6 +369,7 @@ section
                             transition: width .6s ease
 
                 #education
+                    margin-top: 50px
                     @include respond-to(smallDevices)
                         margin-top: 20px
 
